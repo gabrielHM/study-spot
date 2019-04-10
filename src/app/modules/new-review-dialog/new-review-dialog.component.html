@@ -1,0 +1,18 @@
+
+<h2 mat-dialog-title>Review Study Center</h2>
+<mat-dialog-content>
+  <form fxLayout="column" >
+      <ngb-rating [(rate)]="currentRate" max="5"></ngb-rating>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Comment"></textarea>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button color="warn" mat-dialog-close>Cancel</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button color="primary" [mat-dialog-close]="true">Save</button>
+</mat-dialog-actions>

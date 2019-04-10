@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Peceras",
+        "rating":3,
+        "comment": "Hola soy un comentario :|",
+        "timestamp": ""
+    },
+    {
+        "name": "Peceras",
+        "rating":5,
+        "comment": "Hola soy un comentario :)",
+        "timestamp": ""
+    },
+    {
+        "name": "INCADEL",
+        "rating":5,
+        "comment": "Hola soy un comentario",
+        "timestamp": ""
+    },
+    {
+        "name": "INCADEL",
+        "rating":4,
+        "comment": "Hola soy un comentario",
+        "timestamp": ""
+    }
+   
+]

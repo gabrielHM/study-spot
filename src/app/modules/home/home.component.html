@@ -1,0 +1,42 @@
+<div fxLayout="row" fxFill>
+  <div id="map" class="map" fxFlex="70"></div>
+  <div fxFlex="30">
+      <mat-toolbar color="accent" class="mat-elevation-z1">
+          <span>Study Centers</span>
+        </mat-toolbar>
+      <mat-divider></mat-divider>
+    <mat-accordion class="headers-align">
+      <mat-expansion-panel *ngFor="let sc of studyCenters" (opened)="handleLocation(sc); sc.opened=true" (closed)="resetCenter(); sc.opened=false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{sc.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+              {{sc.location.room}} <mat-icon [ngStyle]="{color: sc.location.color}">pin_drop</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <dl class="row">
+            <dt class="col-sm-6 text-right">Room:</dt>
+            <dd class="col-sm-6">{{sc.location.room}}</dd>
+            <dt class="col-sm-6 text-right">Operating Hours:</dt>
+            <dd class="col-sm-6">{{sc.hours}}</dd>
+            <dt class="col-sm-6 text-right">Capacity:</dt>
+            <dd class="col-sm-6">{{sc.capacity}}</dd>
+            <dt class="col-sm-6 text-right">Availability:</dt>
+            <dd class="col-sm-6"><span><mat-icon>{{sc.availability ? "check": "close"}}</mat-icon></span></dd>
+        </dl>
+        <!-- <p>Operating Hours: {{sc.hours}}</p>
+        <p>Capacity: {{sc.capacity}}</p>
+        <p>Availability: <span><mat-icon>{{sc.availability ? "check": "close"}}</mat-icon></span></p> -->
+
+        <mat-action-row>
+            <button mat-button (click)="openLocationForm(sc.location)">Get Directions</button>
+            <button mat-stroked-button color="primary" routerLink="/studycenter">Overview</button>
+          </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <button mat-fab color="primary" matTooltip="Send Feedback" (click)="openMessageForm()">
+        <mat-icon aria-label="Feedback icon button">feedback</mat-icon>
+      </button>
+  </div>
+</div>

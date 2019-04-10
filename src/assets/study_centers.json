@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Peceras",
+        "location":{
+            "room":"II-222",
+            "lat":18.210410,
+            "lon":-67.139554
+        },
+        "hours":"08:00AM - 11:30PM",
+        "capacity":50,
+        "availability":false
+    },
+    {
+        "name": "RUMBO Ex",
+        "location":{
+            "room":"Cel-001",
+            "lat":18.209442,
+            "lon":-67.140681
+        },
+        "hours":"08:00AM - 11:30PM",
+        "capacity":60,
+        "availability":true
+    },
+    {
+        "name": "INCADEL",
+        "location":{
+            "room":"S-101",
+            "lat":18.210219,
+            "lon":-67.139935
+        },
+        "hours":"08:00AM - 11:30PM",
+        "capacity":40,
+        "availability":true
+    },
+    {
+        "name": "CREE",
+        "location":{
+            "room":"Biblioteca",
+            "lat":18.210884,
+            "lon":-67.141890
+        },
+        "hours":"08:00AM - 11:30PM",
+        "capacity":100,
+        "availability":true
+    }
+]

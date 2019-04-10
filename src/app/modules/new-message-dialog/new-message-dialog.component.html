@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Feedback</h2>
+<mat-dialog-content>
+  <form fxLayout="column">
+
+
+    <mat-form-field>
+      <input matInput value="{{currentDate | date:'medium'}}" disabled>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Message"></textarea>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button color="warn" mat-dialog-close>Cancel</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button color="primary" [mat-dialog-close]="true">Save</button>
+</mat-dialog-actions>

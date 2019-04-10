@@ -1,0 +1,57 @@
+<div fxLayout="column" fxLayoutAlign="space-around stretch">
+  <!-- Study Center Info -->
+      <mat-tab-group fxFill>
+          <mat-tab label="Information">
+              <div fxLayout="row" fxLayoutAlign="space-around center" fxFill>
+              <mat-card fxFlex="80" style="margin-top: 16px; margin-bottom: 16px;" fxFlexAlign>
+                  <mat-card-header>
+                    <mat-card-title>Name: {{studyCenter.name}}</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p class="lead">Location: {{studyCenter.location.room}}</p>
+                    <p class="lead">OP Hours: {{studyCenter.hours}}</p>
+                    <p class="lead">Capacity: {{studyCenter.capacity}}</p>
+                    <p class="lead">Availability: {{studyCenter.availability? "Available": "Not Available"}}</p>
+                  </mat-card-content>
+                  <mat-card-actions align="end">
+                    <button mat-button (click)="openSpeedTest()">Measure Internet Speed</button>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+          </mat-tab>
+          <mat-tab label="Usage" *ngIf="isAdmin"> 
+              <div fxLayout="row" fxLayoutAlign="space-around center" fxFill>
+              <img [src]="imgPath" class="img-fluid">
+              </div>
+          </mat-tab>
+        </mat-tab-group>
+        
+  <!-- Reviews -->
+
+  <mat-toolbar color="primary">
+    <span>Reviews</span>
+    <span fxFlex></span>
+    <button mat-raised-button color="accent" (click)="openReviewForm()" *ngIf="!isAdmin">Leave Review</button>
+  </mat-toolbar>
+  <!-- three line list -->
+  <div fxLayout="row">
+    <mat-list fxFill>
+      <!-- <h3 matSubheader>Reviews</h3> -->
+      <mat-list-item *ngFor="let review of reviews; last as last">
+
+        <h3 matLine><span>
+            <ngb-rating [(rate)]="review.rating" [readonly]="true" max="5">
+              <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+              </ng-template>
+            </ngb-rating>
+          </span></h3>
+        <p matLine> {{review.timestamp | date:"medium"}} </p>
+        <p matLine> {{review.comment}} </p>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </mat-list-item>
+
+    </mat-list>
+  </div>
+
+</div>
