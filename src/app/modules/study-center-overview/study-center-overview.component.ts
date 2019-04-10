@@ -14,7 +14,9 @@ export class StudyCenterOverviewComponent implements OnInit {
     constructor(private dialog: MatDialog, private route: ActivatedRoute) { }
     studyCenter;
     isAdmin = false;
-    imgPath = '.../../../assets/users_vs_time.png';
+    // imgPath = '.../../../assets/users_vs_time.png';
+    imgPath = 'assets/users_vs_time.png';
+
     ngOnInit() {
         this.route.queryParamMap.subscribe(params => {
             this.studyCenter = this.studyCenters[0];
