@@ -2,23 +2,27 @@
 <mat-dialog-content>
   <form fxLayout="column">
     <mat-form-field>
-      <input matInput placeholder="Name">
+      <input type="text" required matInput placeholder="Name" value="{{sc.name}}">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Room">
+      <input matInput  required placeholder="Room" value="{{sc.location.room}}">
     </mat-form-field>
 
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <mat-form-field>
-        <input matInput type="number" placeholder="Capacity">
+        <input matInput required type="number" placeholder="Capacity" value="{{sc.capacity}}" [formControl]="capacityFormControl">
+        <mat-error *ngIf="capacityFormControl.hasError('min') && !capacityFormControl.hasError('required')">
+          Please enter a valid capacity. (0+)
+        </mat-error>
+
       </mat-form-field>
 
-      <mat-slide-toggle>Availability</mat-slide-toggle>
+      <mat-slide-toggle [checked]="sc.availability">Availability</mat-slide-toggle>
     </div>
 
     <mat-form-field>
-      <textarea matInput placeholder="Operation hours"></textarea>
+      <textarea matInput required placeholder="Operation hours" value="{{sc.hours}}"></textarea>
     </mat-form-field>
 
   </form>
