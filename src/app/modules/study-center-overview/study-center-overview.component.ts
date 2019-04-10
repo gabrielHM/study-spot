@@ -15,7 +15,7 @@ export class StudyCenterOverviewComponent implements OnInit {
     studyCenter;
     isAdmin = false;
     // imgPath = '.../../../assets/users_vs_time.png';
-    imgPath = 'assets/users_vs_time.png';
+    imgPath = './assets/users_vs_time.png';
 
     ngOnInit() {
         this.route.queryParamMap.subscribe(params => {
